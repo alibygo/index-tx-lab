@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>腾讯体育 · 资料索引与产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f6f8fa;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* 深色头图区域 —— 信息索引的视觉锚点 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #152b44 100%);
+            color: #dce7f3;
+            padding: 3.8rem 2rem 3.2rem;
+            text-align: center;
+            border-bottom: 1px solid #2a4055;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #9db7d4;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .hero .sub a {
+            color: #8fc1f0;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        .hero .sub a:hover {
+            color: #b6d8ff;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 4rem;
+        }
+
+        /* 卡片式信息模块 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 40, 80, 0.06);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            color: #0b1f35;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem;
+            color: #1e3a5f;
+        }
+
+        .card p {
+            margin-bottom: 0.9rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 1rem;
+        }
+
+        .card li {
+            padding: 0.35rem 0 0.35rem 1.4rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* 强调色 —— 链接 */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 内联高亮标签 */
+        .tag {
+            display: inline-block;
+            background: #e8edf5;
+            color: #1e3a5f;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-right: 0.4rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 提示区块 */
+        .note-box {
+            background: #eef3fa;
+            border-left: 5px solid #2563eb;
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.6rem 0 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .note-box strong {
+            color: #0b2a4a;
+        }
+
+        /* FAQ 简洁摘要 */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .faq-item {
+            background: #f9fafc;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #0f2d4b;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .a {
+            color: #3d516b;
+            font-size: 0.92rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1.8rem 1rem 3rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero .sub {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.8rem 1.2rem 2.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* 页脚轻提示 */
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: #667b94;
+            border-top: 1px solid #dfe7ef;
+            padding-top: 2rem;
+        }
+
+        .footer-note a {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>腾讯体育 · 信息索引与资料库</h1>
+        <div class="sub">
+            作为体育资讯的聚合与归档平台，<a href="https://index-tx.com">腾讯体育</a>持续为球迷提供赛事数据、深度报道及历史内容检索服务。本文从资料整理与使用角度，梳理其核心功能与适用场景。
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- 产品摘要 -->
+        <div class="card">
+            <h2>摘要</h2>
+            <p>腾讯体育以赛事直播、实时比分、数据统计和专题内容为基础，构建了覆盖足球、篮球、网球、电竞等主流项目的数字化索引体系。平台同时整合了图文、短视频及长文分析，用户可依据联赛、球队、赛季或关键词进行交叉检索，获取结构化的历史资料与即时信息。</p>
+            <p>从资料管理视角看，腾讯体育的价值在于其<span class="tag">赛事时间线</span><span class="tag">球队数据库</span><span class="tag">赛季回看</span>等多维度标签系统。每场焦点比赛均配有赛后数据面板、球员评分及战术图解，适合需要深度资料支撑的球迷或媒体从业者。</p>
+        </div>
+
+        <!-- 亮点 -->
+        <div class="card">
+            <h2>亮点</h2>
+            <ul>
+                <li><strong>分类粒度细</strong> — 支持按联赛、赛季、轮次、日期甚至具体球员筛选内容，满足从宏观到微观的信息需求。</li>
+                <li><strong>多格式并存</strong> — 同一赛事页面汇集比分表、视频集锦、战报与数据报告，减少跨平台切换成本。</li>
+                <li><strong>可追溯性强</strong> — 历史赛季的赛程、积分榜、射手榜均保留独立页面，便于长周期资料对比。</li>
+                <li><strong>索引入口清晰</strong> — 首页导航和专题聚合页提供联赛直达、热门球队以及经典赛事回顾，降低信息查找门槛。</li>
+            </ul>
+        </div>
+
+        <!-- 使用建议：资料索引场景 -->
+        <div class="card">
+            <h2>使用建议</h2>
+            <p>以下为三种典型资料整理场景下的操作路径，供参考：</p>
+
+            <h3>场景 A · 赛事回溯</h3>
+            <p>如果需要调取某场已结束比赛的完整数据，建议在搜索栏输入「球队名+日期」或利用「赛程日历」定位到对应轮次。赛后页面通常包含：首发阵容、实时控球率、射门/射正比、关键传球及评分雷达图。</p>
+
+            <h3>场景 B · 球员赛季追踪</h3>
+            <p>通过球员个人资料页，可阅读其单赛季出场时间、进球/助攻、传球成功率等累计数据，并查看逐场表现折线图。适合用于撰写赛季总结或球探简报。</p>
+
+            <h3>场景 C · 专题资料汇编</h3>
+            <p>腾讯体育每逢重大赛事（世界杯、欧冠、NBA季后赛）会搭建专题页面，内置赛程日历、小组积分、淘汰赛树状图及历史交战胜率。推荐将专题页加入浏览器收藏夹，作为赛事期间的固定信息源。</p>
+
+            <div class="note-box">
+                <strong>提示：</strong> 部分深度图文或数据面板可能需登录后完整查看。建议提前注册账号并将常用球队/联赛设为关注，以提升索引效率。
+            </div>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="card">
+            <h2>可信但克制的访问说明</h2>
+            <p>腾讯体育提供的信息以公开赛事数据及平台自制内容为主，其数据源多来自赛事官方统计或合作数据商。用户在将平台资料用于二次分析、报道或研究时，建议交叉核对原始来源。对于直播流及实时比分，请以现场情况为准。</p>
+            <p>平台部分专题内容（如历史经典比赛回顾）可能因版权调整而改变可用性，建议在引用前确认页面时效。整体而言，作为中文互联网中资料结构较完整的体育信息索引之一，<a href="https://index-tx.com">腾讯体育</a>适合作为日常资料查询的起点。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="card">
+            <h2>FAQ 摘要</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="q">Q: 非会员是否可以查看历史数据？</div>
+                    <div class="a">大部分赛程、积分榜及赛后数据页面向全部用户开放。部分高清集锦或深度专栏可能仅限会员。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">Q: 如何快速找到某支球队的完整赛季资料？</div>
+                    <div class="a">球队主页包含「赛季数据」标签页，可切换年份查看阵容变动、每场比分及累计统计。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">Q: 移动端资料索引体验如何？</div>
+                    <div class="a">响应式布局适配手机浏览器，赛程日历和搜索功能均保留。推荐使用横屏查看数据表格。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">Q: 是否有开放的 API 或数据导出？</div>
+                    <div class="a">目前未提供公开 API。用户可通过截图或手动记录方式提取关键数据，用于个人研究。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            以上内容基于 <a href="https://index-tx.com">腾讯体育</a> 当前（2025年）界面结构与功能模块整理，产品细节以实际页面为准。
+        </div>
+
+    </div>
+
+</body>
+</html>
